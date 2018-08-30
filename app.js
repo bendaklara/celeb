@@ -185,7 +185,7 @@ function handleMessage(sender_psid, received_message) {
         switch (received_message.text.replace(/[^\w\s]/gi, '').trim().toLowerCase()) {
             case "room preferences":
                 //response = setRoomPreferences(sender_psid);
-				response={
+				jsondata={
 							attachment: {
 								type: "template",
 								payload: {
@@ -201,6 +201,7 @@ function handleMessage(sender_psid, received_message) {
 								}
 							}
 						}
+				respones=JSON.stringify(jsondata)
 				
                 break;
             default:
