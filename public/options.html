@@ -14,6 +14,7 @@
         js.src = "//connect.facebook.com/en_US/messenger.Extensions.js";
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'Messenger'));
+
     window.extAsyncInit = () => {
         // TODO: How to parse env file from here?
         MessengerExtensions.getSupportedFeatures(function success(result) {
@@ -42,6 +43,7 @@
             });
         });
     };
+
 </script>
 <form action="/optionspostback" method="get">
     <input type="hidden" name="psid" id="psid">
