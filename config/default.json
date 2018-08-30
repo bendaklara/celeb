@@ -2,5 +2,5 @@
     "appSecret": "1a23c4fbf1ba135ca93fc84992cec1ca",
     "pageAccessToken": "EAAHUymWZCGTIBAEDzEn2IvFGtXL0tDrguoRUr3zY0lkNsZC5tkwuXINS3aXqxd85VTKNT2WZB4w7smR9Aam87bklGQfJwAR5Bn80XD7P1yuJlrsARcqBqFjz7lAgm5vU3IOcXC8MmFZC6gVsZBS5Wd2eOglnosndh1P2jZCfn5JgZDZD",
     "validationToken": "TOKEN",
-    "serverURL": "to_be_set_manually"
+    "serverURL": "https://datadatbot.tk:5001"
 }
