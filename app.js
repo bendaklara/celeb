@@ -184,7 +184,24 @@ function handleMessage(sender_psid, received_message) {
     if (received_message.text) {
         switch (received_message.text.replace(/[^\w\s]/gi, '').trim().toLowerCase()) {
             case "room preferences":
-                response = setRoomPreferences(sender_psid);
+                //response = setRoomPreferences(sender_psid);
+				response={
+							attachment: {
+								type: "template",
+								payload: {
+									template_type: "button",
+									text: "OK, let's set your room preferences so I won't need to ask for them in the future.",
+									buttons: [{
+										type: "web_url",
+										url: SERVER_URL + "/options",
+										title: "Set preferences",
+										webview_height_ratio: "compact",
+										messenger_extensions: true
+									}]
+								}
+							}
+						}
+				
                 break;
             default:
                 response = {
