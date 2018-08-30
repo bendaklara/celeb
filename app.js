@@ -26,7 +26,7 @@ const
 	
 var app = express();
 
-app.set('port', process.env.PORT || 5001);
+app.set('port', process.env.PORT || 443);
 app.use(body_parser.json());
 app.use(express.static('public'));
 /*
@@ -213,7 +213,7 @@ function setRoomPreferences(sender_psid) {
                 text: "OK, let's set your room preferences so I won't need to ask for them in the future.",
                 buttons: [{
                     type: "web_url",
-                    url: SERVER_URL + "/options.html",
+                    url: SERVER_URL + "/options",
                     title: "Set preferences",
                     webview_height_ratio: "compact",
                     messenger_extensions: true
