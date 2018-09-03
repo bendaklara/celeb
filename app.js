@@ -61,6 +61,7 @@ app.get('/options', (req, res, next) => {
 // Handle postback from webview
 app.get('/optionspostback', (req, res) => {
     let body = req.query;
+	console.log(body);
     let response = {
         "text": `Great, I will book you a ${body.bed} bed, with ${body.pillows} pillows and a ${body.view} view.`
     };
