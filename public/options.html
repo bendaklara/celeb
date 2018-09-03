@@ -24,8 +24,9 @@
                 MessengerExtensions.getContext('515440732215602', //the app id is added in here
                     function success(thread_context) {
                         // success
+						
+						console.log('I have got the PSID' + thread_context.psid);
                         document.getElementById("psid").value = thread_context.psid;
-						console.log('I have got the PSID' + psid);
                     },
                     function error(err) {
                         // error
