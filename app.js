@@ -43,10 +43,13 @@ module.exports = app;
 app.get('/options', (req, res, next) => {
     let referer = req.get('Referer');
     if (referer) {
+		console.log('step 1. Referer exists');
         if (referer.indexOf('www.messenger.com') >= 0) {
             res.setHeader('X-Frame-Options', 'ALLOW-FROM https://www.messenger.com/');
+			console.log('step 2. Referer for messenger is set');
         } else if (referer.indexOf('www.facebook.com') >= 0) {
             res.setHeader('X-Frame-Options', 'ALLOW-FROM https://www.facebook.com/');
+			console.log('step 3. Referer for facebook.com is set');
         }
         res.sendFile('public/options.html', {root: __dirname});
     }
