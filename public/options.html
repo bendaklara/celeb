@@ -4,7 +4,7 @@
 </head>
 <body>
 <script>
-    (function (d, s, id) {
+/*    (function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) {
             return;
@@ -15,49 +15,7 @@
         fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'Messenger'));
 	
-        window.fbAsyncInit = function() {
-                FB.init({
-                appId: '515440732215602',
-                status: true,
-                cookie: true,
-                xfbml: true
-            });
-        };
-
-        // Load the SDK asynchronously
-        (function(d){
-        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement('script'); js.id = id; js.async = true;
-        js.src = "http://connect.facebook.net/en_US/all.js";
-        ref.parentNode.insertBefore(js, ref);
-        }(document));
-
-        function login() {
-			FB.login(function(response) {
-				if (response.authResponse) {
-				 console.log('Welcome!  Fetching your information.... ');
-				 FB.api('/me', function(response) {
-				   console.log('Good to see you, ' + response.name + '.');
-				 });
-				} else {
-				 console.log('User cancelled login or did not fully authorize.');
-				}
-			});            
-        }
-
-        function logout() {
-            FB.logout(function(response) {
-              // user is now logged out
-            });
-        }
-
-        var status = FB.getLoginStatus();
-
-        console.log(status);
-
 	
-
     window.extAsyncInit = () => {
 		console.log('The Messenger SDK has loaded');
         // TODO: How to parse env file from here?
@@ -89,17 +47,61 @@
             });
         });
     };
+*/
+
+        <script>
+        window.fbAsyncInit = function() {
+                FB.init({
+                appId: '192460034625782',
+                status: true,
+                cookie: true,
+                xfbml: true
+            });
+        };
+
+        // Load the SDK asynchronously
+        (function(d){
+        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        ref.parentNode.insertBefore(js, ref);
+        }(document));
+
+        function login() {
+			FB.login(function(response) {
+				if (response.authResponse) {
+				 console.log('Welcome!  Fetching your information.... ');
+				 FB.api('/me', function(response) {
+				   console.log('Good to see you, ' + response.name + '.');
+				 });
+				} else {
+				 console.log('User cancelled login or did not fully authorize.');
+				}
+			});            
+        }
+
+        function logout() {
+            FB.logout(function(response) {
+              // user is now logged out
+            });
+        }
+
+        var status = FB.getLoginStatus();
+
+        console.log(status);
+
+
+
 
 </script>
 
-       <button onclick="javascript:login();">Login Facebook</button>
+        <button onclick="javascript:login();">Login Facebook</button>
 
         <br>
 
         <button onclick="javascript:logout();">Logout from Facebook</button>
-        <br>
-        <br>
-
+<br><br>
 <form action="/optionspostback" method="get">
     <input type="hidden" name="psid" id="psid">
     <h3>Pillows</h3>
