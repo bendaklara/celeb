@@ -16,6 +16,7 @@
     }(document, 'script', 'Messenger'));
 
     window.extAsyncInit = () => {
+		console.log('The Messenger SDK has loaded');
         // TODO: How to parse env file from here?
         MessengerExtensions.getSupportedFeatures(function success(result) {
             let features = result.supported_features;
@@ -24,6 +25,7 @@
                     function success(thread_context) {
                         // success
                         document.getElementById("psid").value = thread_context.psid;
+						console.log('I have got the PSID' + psid);
                     },
                     function error(err) {
                         // error
